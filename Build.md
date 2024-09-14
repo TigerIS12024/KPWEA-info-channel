@@ -4,6 +4,7 @@ You can install this on **ANY OPERATING SYSTEM**, no mac, windows reqired. Well 
 - The Operating System needs to run in a FASTER GRAPHICS CARD, for the best quality Experience.
  
 > Clone the Repository. or click on Code then Dowload ZIP.
+
 First 
 You need to install the [WS4000 Font Extended from TWC Classics](https://twcclassics.com/downloads.html). 
 Second, you need a [Less CCS Compiler](https://lessccs.org). 
