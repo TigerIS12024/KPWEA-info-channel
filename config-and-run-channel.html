@@ -1,9 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Character Generator</title>
-    <script type="text/javascript" src="charagen.js"></script>
+    <meta charset="UTF-8">
+    <title>KPWEA Access Info Channel</title>
     <link rel="stylesheet" type="text/css" href="styles.css" id="catvstyle" />
+    <script type="text/javascript" src="charagen.js"></script>
+
+    <!-- JavaScript for NWS alerts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nwsUrl = 'https://api.weather.gov/alerts/active/zone/ORZ006'; // Portland, OR zone code
+
+            fetch(nwsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const alerts = data.features;
+                    const alertsDiv = document.getElementById('alerts');
+
+                    if (alerts.length === 0) {
+                        // If no active alerts, show this message
+                        alertsDiv.innerHTML = '<h2 style="background-color: green; color: white;">No Active Alerts</h2>';
+                    } else {
+                        // If there are active alerts, loop through them and display each one
+                        alertsDiv.innerHTML = ''; // Clear the div for fresh alerts
+                        alerts.forEach(alert => {
+                            const alertTitle = alert.properties.headline;
+                            const alertDesc = alert.properties.description;
+                            const alertEndTime = new Date(alert.properties.ends).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                            const alertType = alert.properties.event;
+
+                            // Display all types of alerts
+                            alertsDiv.innerHTML += `
+                                <h2 style="background-color: red; color: white;">${alertTitle}</h2>
+                                <p><strong>Type:</strong> ${alertType}</p>
+                                <p><strong>Description:</strong> ${alertDesc}</p>
+                                <p><strong>In Effect Until:</strong> ${alertEndTime}</p>
+                                <hr>
+                            `;
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching alerts:', error);
+                    alertsDiv.innerHTML = '<h2 style="background-color: red; color: white;">Error Loading Alerts</h2><p>Please try again later.</p>';
+                });
+        });
+    </script>
 </head>
 
 <body>
@@ -14,14 +56,22 @@
 
     <main>
         <h1>Alerts</h1>
-        <h2 style="background-color: black">No Warnings And Watches</h2>
-        <p>No Advisorys</p>
-        <h1 style="background-color: red">Anoucements</h1>
-        <p>Im getting a I2, from sagent.</p>
+        <div id="alerts">
+            <!-- Default message will be replaced by JavaScript -->
+            <h2 style="background-color: green; color: white;">No Active Alerts</h2>
+        </div>
+
+        <h1 style="background-color: red">Announcements</h1>
+        <p>I'm getting an I2, from sagent.</p>
+
         <h1>Bullitins: None</h1>
     </main>
 
-    <!-- WARNING: You can't have space between the closing DIV tags, or you get jumpy whitespace -->
-    <div class="scroller"><div class="marquee-outer"><div class="marquee-inner"> With LT CABLE , unleash the exitement with cable TV, in HD 8K. Get the LT Cable box 40 Now. Offer ends Jan 1 2025.</div></div></div>
+    <!-- Scroller -->
+    <div class="scroller">
+        <div class="marquee-outer">
+            <div class="marquee-inner">With LT CABLE, unleash the excitement with cable TV, in HD 8K. Get the LT Cable box 40 Now. Offer ends Jan 1 2025.</div>
+        </div>
+    </div>
 </body>
 </html>
