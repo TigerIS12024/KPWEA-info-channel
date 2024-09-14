@@ -53,7 +53,7 @@
 		    const hh = ('0' + (hour > 0 ? (hour > 12 ? hour - 12 : hour) : '12')).slice(-2);
 		    const mm = ('0' + now.getMinutes()).slice(-2);
 		    const ss = ('0' + now.getSeconds()).slice(-2);
-		    now.setFullYear(now.getFullYear() + TIME_MACHINE);
+		    now.setFullYear(now.getFullYear() );
 		    const timeOut = `${days[now.getDay()]} ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} TIME ${hh}:${mm}:${ss} ` + (hour >= 12 ? 'PM' : 'AM');
 		    for (clock of document.getElementsByClassName('time')) {
           clock.innerText = timeOut;
