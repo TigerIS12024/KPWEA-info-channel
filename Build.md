@@ -14,6 +14,17 @@ Third, After you install the font and the Less CCS Compiler, drag the font to th
 > It is recomended to close all apps on your computer until you run it.
 On your terminal, run this.
 
+For mac:
+```
+cd /Users/youruser/Downloads/v1.0
+```
+
+And, for windows:
+```
+cd C:/Users/youruser/Downloads/v1.0
+```
+And then, **Type ans enter this command**
+
 ```
 lessc styles.less styles.ccs
 ```
