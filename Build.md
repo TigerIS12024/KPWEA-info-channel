@@ -29,5 +29,5 @@ And then, **Type ans enter this command**
 lessc styles.less styles.ccs
 ```
 Running It
-Open the index.html file. This will run it.
+Open the config-and-run-channel.html file. This will run it.
 > Hope you like it, if any errors or help please tell me at the Issues tab.
