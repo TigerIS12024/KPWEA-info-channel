@@ -3,7 +3,9 @@ You can install this on **ANY OPERATING SYSTEM**, no mac, no windows reqired. We
 
 - The Operating System needs to run in a FASTER GRAPHICS CARD, for the best quality Experience.
  
-> Clone the Repository. or click on Code then Dowload ZIP.
+First,  Clone the Repository. or click on Code then Dowload ZIP.
+Or go to the [releases page](https://github.com/TigerIS12024/KPWEA-info-channel/releases).
+
 
 First 
 You need to install the [WS3000 Font Extended from TWC Classics](https://twcclassics.com/downloads.html). 
