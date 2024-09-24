@@ -1,5 +1,5 @@
 # Reqierments
-You can install this on **ANY OPERATING SYSTEM**, no mac, windows reqired. Well theres **One** reqirement that i wanna show.
+You can install this on **ANY OPERATING SYSTEM**, no mac, no windows reqired. Well theres **One** reqirement that i wanna show.
 
 - The Operating System needs to run in a FASTER GRAPHICS CARD, for the best quality Experience.
  
